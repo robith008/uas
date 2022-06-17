@@ -1,0 +1,45 @@
+print("\nPROGRAM CAPAIAN MARKETING KOPERASI SIMPAN PINJAM")
+print("Nama : Robith Azkal Aulia")
+print("NIM : 21206052008")
+
+list_no=[]
+list_nama=[]
+list_alamat=[]
+list_jumlah=[]
+list_bonus=[]
+
+stop = False
+x = 0
+while(not stop):
+  inputno = input("masukan nomor nasabah : ")
+  list_no.append(inputno)
+  inputnama = input("masukan nama nasabah : ")
+  list_nama.append(inputnama)
+  inputalamat = input("masukan alamat nasabah : ")
+  list_alamat.append(inputalamat)
+  inputjumlah = float(input("masukan jumlah pinajaman : "))
+  list_jumlah.append(inputjumlah)
+  capaian = sum(list_bonus)
+  x+=1
+  ulang = input("apakah ingin input lagi (y/t) ? : ")
+  if ulang == "t":
+    stop = True
+    
+    n = 0
+    print("\nJumlah Nasabah : ",x)
+    for i in range(x):
+      n+=1
+      if list_jumlah[i] > 500000:
+        print("\nNasabah ke ",n," :")
+        print("Nama Nasabah :",list_nama[i])
+        print("Jumlah Pinjaman :",list_jumlah[i])
+        bonus = list_jumlah[i]*0.01
+        list_bonus.append(bonus)
+        print("bonus anda sebesar :",bonus)
+      else:
+        print("Maaf, Nasabah Tidak Muncul Berarti Anda Tidak Mendapat Bonus")
+
+    if capaian >= 100000:
+      print("predikat capaian anda A")
+    else:
+      print("predikat capaian anda B")
